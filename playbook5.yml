@@ -1,18 +1,1 @@
-- name: Remove Apache from webservers
-  hosts: webservers
-  tasks:
-   - name: Remove Apache
-     ansible.builtin.yum:
-       name: httpd
-       state: absent
-       autoremove: yes
 
-- name: Remove Apache from ubuntuservers
-  hosts: ubuntuservers
-  tasks:
-   - name: Remove Apache
-     ansible.builtin.apt:
-       name: apache2
-       state: absent
-       autoremove: yes
-       purge: yes
