@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+  - name: show IP address
+    ansible.builtin.debug:
+      msg: >
+       This host uses IP address {{ ansible_facts.default_ipv4.address }}
+
+      # Alternative:
+      # This host uses IP address {{ ansible_facts['default_ipv4']['address'] }}
